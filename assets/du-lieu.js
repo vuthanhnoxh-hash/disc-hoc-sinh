@@ -22,6 +22,37 @@ const TU_THEO_GOC = {
       "TỈ MỈ","THẬN TRỌNG","CÓ TÍNH HỆ THỐNG"]
 };
 
+/* ------------------------------------------------------------
+   THỨ TỰ HIỆN TRÊN MÀN HÌNH — chép đúng tờ đề bài giấy, 9 hàng.
+   Giữ nguyên thứ tự này để thầy cô nào quen bản giấy nhận ra ngay.
+
+   ⚠️ Tờ đề bài giấy chỉ in 75 từ, THIẾU hai từ có trong bảng đối chiếu:
+      KIÊN QUYẾT (góc D) và KIÊN NHẪN (góc S) — đánh dấu ★ dưới đây.
+      Gần như chắc chắn là lỗi dàn trang (cả hai đều bắt đầu bằng "KIÊN").
+      Người dùng đã chốt ngày 2026-09-25: KHÔI PHỤC cả hai, dùng đủ 77 từ.
+   ------------------------------------------------------------ */
+
+const THU_TU_DE = [
+  // hàng 1
+  "KẾT QUẢ","BIẾT QUAN TÂM","GIỎI LẮNG NGHE","MẠNH MẼ","HOẠT NGÔN","KHOAN DUNG","NHẤT QUÁN","TRÁCH NHIỆM",
+  // hàng 2  (★ KIÊN QUYẾT được khôi phục vào đây)
+  "TÒ MÒ","CHỦ ĐỘNG","THÔNG CẢM","GHÉT THAY ĐỔI","NÉ TRÁNH XUNG ĐỘT","TỰ TIN","KIÊN QUYẾT","NỔI BẬT",
+  // hàng 3
+  "SÔI NỔI","HOÀ ĐỒNG","THÍCH THAY ĐỔI","THÍCH KHEN NGỢI","TRUYỀN CẢM HỨNG","VUI VẺ","NĂNG LƯỢNG CAO",
+  // hàng 4  (★ KIÊN NHẪN được khôi phục vào đây, cạnh TRUNG THÀNH cùng góc S)
+  "CẦU TIẾN","LẠC QUAN","THÍCH NGHI","TRUNG THÀNH","KIÊN NHẪN","MẠO HIỂM","NHIỆT TÌNH","ÁP ĐẶT","CẨN THẬN","KÍN ĐÁO",
+  // hàng 5
+  "PHỤC TÙNG","HAY GÂY RẮC RỐI","CHU ĐÁO","ĐÁNG TIN","VỊ KỶ","VÔ LO","NHẸ NHÀNG","THẬN TRỌNG","GANH ĐUA",
+  // hàng 6
+  "NGHỊ LỰC","TỈ MỈ","ĐỘC LẬP","QUYẾT ĐOÁN","THỰC TẾ","DANH VỌNG","Ý CHÍ","TẬP TRUNG","BẢO THỦ","THIẾU HÀI HƯỚC",
+  // hàng 7
+  "SÁNG TẠO","KIỀM CHẾ","CHẮC CHẮN","CÓ TÀI ỨNG BIẾN","CÓ TÍNH HỆ THỐNG","TỰ TRỌNG","THIẾU QUYẾT ĐOÁN","CẦU TOÀN",
+  // hàng 8
+  "THUYẾT PHỤC","CỨNG CỎI","QUYỀN LỰC","HƯỚNG ĐẾN MỤC TIÊU","THẲNG THẮN","CHÍNH XÁC","CHI TIẾT","NÓNG VỘI","LOGIC",
+  // hàng 9
+  "BÌNH TĨNH","CỨNG NHẮC","HƯỚNG NGOẠI","CỞI MỞ","HUNG HĂNG","PHÂN TÍCH","CÓ KẾ HOẠCH","KHIÊM TỐN"
+];
+
 /* Bốn góc KHÔNG bằng nhau về số từ (D:21 · I:19 · S:19 · C:18).
    Ai khoanh ngẫu nhiên vẫn ra D cao hơn C khoảng 17%.
    Vì vậy ngoài điểm thô, bài luôn hiện thêm "mức đậm" = số từ khoanh / tổng từ của góc đó. */

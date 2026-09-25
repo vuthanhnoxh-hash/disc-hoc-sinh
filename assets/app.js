@@ -2,23 +2,27 @@
    BÀI TEST DISC 77 TÍNH TỪ — phần chạy
    ============================================================ */
 
-/* ---------- 1. Dựng danh sách từ đã xáo trộn ---------- */
-/* Xáo bằng công thức cố định (không dùng ngẫu nhiên thật) để:
-   - mọi học sinh thấy CÙNG một thứ tự, thầy cô đối chiếu được
-   - các từ cùng một góc không đứng liền nhau, tránh đoán bài      */
+/* ---------- 1. Dựng danh sách từ theo thứ tự tờ đề bài ---------- */
+/* Hiện đúng thứ tự bản giấy (THU_TU_DE), tra góc từ bảng đối chiếu (TU_THEO_GOC).
+   Tách hai thứ này ra để sửa từ ngữ ở một chỗ mà không lo lệch chỗ kia. */
 
 const MOI_TU = [];
 (function dungDanhSach(){
-  for (const goc of ["D","I","S","C"]) {
-    TU_THEO_GOC[goc].forEach((tu, i) => MOI_TU.push({ tu, goc, thutu: i }));
+  const tra = {};   // từ -> góc
+  for (const goc of ["D","I","S","C"]) TU_THEO_GOC[goc].forEach(tu => tra[tu] = goc);
+
+  // Tự kiểm tra: bắt lỗi ngay thay vì âm thầm chấm sai
+  const lac  = THU_TU_DE.filter(tu => !tra[tu]);
+  const sot  = Object.keys(tra).filter(tu => THU_TU_DE.indexOf(tu) < 0);
+  const trung = THU_TU_DE.filter((tu, i) => THU_TU_DE.indexOf(tu) !== i);
+  if (lac.length || sot.length || trung.length) {
+    console.error("[DISC] Dữ liệu lệch — bài test sẽ chấm SAI:",
+      { "từ không có trong bảng đối chiếu": lac,
+        "từ trong bảng đối chiếu nhưng thiếu trên đề": sot,
+        "từ bị lặp": trung });
   }
-  // xáo tất định: trộn theo số dư, kiểu "chia bài"
-  let hat = 7;
-  for (let i = MOI_TU.length - 1; i > 0; i--) {
-    hat = (hat * 1103515245 + 12345) % 2147483648;
-    const j = hat % (i + 1);
-    [MOI_TU[i], MOI_TU[j]] = [MOI_TU[j], MOI_TU[i]];
-  }
+
+  THU_TU_DE.forEach(tu => MOI_TU.push({ tu, goc: tra[tu] || "?" }));
 })();
 
 const TONG_TU_GOC = { D: TU_THEO_GOC.D.length, I: TU_THEO_GOC.I.length,
