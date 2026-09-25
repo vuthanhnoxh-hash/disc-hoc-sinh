@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bảng tổng hợp DISC cả lớp — dành cho thầy cô</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/style.css">
+<style>@media print{ .hang-nut,#khoa-vao,#trang-thai{display:none!important} body{background:#fff} .the{box-shadow:none}}</style>
+</head>
+<body>
+<div class="boc">
+  <h1>Bảng tổng hợp DISC cả lớp</h1>
+  <p class="phu">Trang này dành cho thầy cô. Học sinh không cần vào đây.</p>
+
+  <div id="trang-thai" class="bang-tin an"></div>
+
+  <section id="khoa-vao" class="the">
+    <label for="o-ma">Mã của thầy cô</label>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <input type="text" id="o-ma" style="flex:1;min-width:180px" placeholder="Nhập mã rồi bấm Vào">
+      <button class="nut" id="nut-vao">Vào bảng</button>
+    </div>
+    <p class="phu" style="margin:10px 0 0">Mã đặt trong file <code>cai-dat.js</code>, mục
+    <code>MA_GIAO_VIEN</code>. Đây chỉ là khoá che mắt học sinh, không phải bảo mật thật.</p>
+  </section>
+
+  <section id="phan-bang" class="an">
+    <div class="the">
+      <label for="o-loc-lop">Xem lớp nào</label>
+      <select id="o-loc-lop" style="width:100%;padding:12px 14px;font-size:16px;font-family:inherit;
+        background:var(--nen);color:var(--chu);border:1.5px solid var(--vien);border-radius:10px"></select>
+    </div>
+    <div id="thong-ke"></div>
+    <div id="bang"></div>
+  </section>
+
+  <footer>
+    <p><b>Đọc bảng này thế nào.</b> Bốn cột D/I/S/C là số tính từ em đó khoanh thuộc mỗi góc.
+    Cột <b>Kiểu</b> là góc mạnh nhất; nếu có hai chữ (ví dụ <code>D-I</code>) nghĩa là hai góc mạnh
+    ngang nhau.</p>
+    <p><b>Xin đừng dùng bảng này để xếp loại, chia ban hay chấm điểm học sinh.</b> DISC mô tả hành
+    vi, không đo năng lực và không dự báo thành công. Một nghiên cứu năm 2013 trên bộ Persolog kết
+    luận loại bài đo này đạt về độ tin cậy nhưng <i>không</i> đạt về độ hiệu lực. Hãy dùng nó để
+    <b>mở lời, hiểu nhau và chia nhóm cho hợp</b> — đó là chỗ nó thật sự có ích.</p>
+  </footer>
+</div>
+
+<script src="cai-dat.js"></script>
+<script src="assets/du-lieu.js"></script>
+<script src="assets/bang-lop.js"></script>
+</body>
+</html>

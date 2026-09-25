@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bài test DISC — Em thuộc nhóm tính cách nào?</title>
+<meta name="description" content="Bài test nhóm tính cách DISC 77 tính từ dành cho học sinh. Làm trong 5 phút, có ngay bảng phân tích.">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+@media print{
+  .day,.hang-nut,#trang-thai-luu{display:none!important}
+  body{background:#fff}
+  .the{box-shadow:none;break-inside:avoid;border-color:#ccc}
+}
+</style>
+</head>
+<body>
+<div class="boc">
+
+  <!-- ==================== LÀM BÀI ==================== -->
+  <section id="phan-lam-bai">
+    <h1>Em thuộc nhóm tính cách nào?</h1>
+    <p class="phu">Bài test DISC · <span id="tong-so-tu">77</span> tính từ · khoảng 5 phút</p>
+
+    <div class="the">
+      <div class="hang-nhap">
+        <div>
+          <label for="o-ten">Họ và tên của em</label>
+          <input type="text" id="o-ten" autocomplete="name" placeholder="Nguyễn Văn An">
+        </div>
+        <div id="o-lop">
+          <label for="o-lop-nhap">Lớp</label>
+          <input type="text" id="o-lop-nhap" placeholder="10A1">
+        </div>
+      </div>
+      <div id="bao-loi-nhap" class="an"></div>
+    </div>
+
+    <div class="the">
+      <h2 style="margin-top:0">Cách làm</h2>
+      <p>Đọc lướt qua hết các từ bên dưới. <b>Bấm vào MỌI từ mà em thấy giống mình</b> — giống
+      trong đời thật, không phải giống người em muốn trở thành.</p>
+      <p class="phu">Không có câu đúng câu sai. Đừng nghĩ lâu, cảm giác đầu tiên thường chuẩn nhất.
+      Khoanh bao nhiêu từ cũng được, nhưng nên từ 15 từ trở lên.</p>
+    </div>
+
+    <div class="the">
+      <h2 style="margin-top:0">Những từ nào giống em?</h2>
+      <div class="luoi-tu" id="luoi-tu"></div>
+    </div>
+  </section>
+
+  <!-- ==================== KẾT QUẢ ==================== -->
+  <section id="phan-ket-qua" class="an">
+    <h1>Kết quả của em</h1>
+    <div id="trang-thai-luu" class="bang-tin"></div>
+    <div id="kq-noidung"></div>
+    <div class="hang-nut">
+      <button class="nut" id="nut-tai">⬇ Tải kết quả về máy</button>
+      <button class="nut phu2" id="nut-in">🖨 In / lưu PDF</button>
+      <button class="nut phu2" id="nut-lam-lai">↻ Làm lại</button>
+    </div>
+  </section>
+
+  <footer>
+    <p id="ten-truong"></p>
+    <p>Bài test dựa trên mô hình DISC của <b>William Moulton Marston</b>
+    (<i>Emotions of Normal People</i>, 1928). Tên bốn con vật lấy theo cách gọi của
+    <b>Merrick Rosenberg</b> trong <i>Taking Flight!</i> (2012).</p>
+    <p><b>Giới hạn cần biết:</b> DISC mô tả <i>hành vi</i>, không đo trí thông minh, không đo năng
+    lực, và không dự báo được thành công. Đây là công cụ để hiểu nhau và mở lời — <b>không dùng để
+    xếp loại, phân ban hay đánh giá học sinh</b>.</p>
+  </footer>
+</div>
+
+<!-- ==================== THANH ĐÁY ==================== -->
+<div class="day" id="thanh-day">
+  <div class="dem">Đã chọn <b id="so-da-chon">0</b> từ</div>
+  <button class="nut" id="nut-xong" disabled>Xem kết quả →</button>
+</div>
+
+<script src="cai-dat.js"></script>
+<script src="assets/du-lieu.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
